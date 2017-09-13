@@ -42,7 +42,7 @@ class Solution(object):
             for i in range(len(s) - l + 1):
                 j = i + l - 1
                 if s[i] == s[j] and dp[i+1][j-1]:
-                    dp[i][j] = 1
+                    dp[i][j] = True
                     pos = i
                     maxLen = l
         return s[pos:pos+maxLen]
