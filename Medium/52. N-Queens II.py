@@ -11,7 +11,7 @@ shu,pie,na的哪些二进制为1表示当前位置不可用,所以shu|pie|na表�
 ~(shu|pie|na)的最右边n位则表示所有能使用的位置,为了保证只取最右n位,再&上一个bound=(1<<n)-1(1...111 -->n个1)
 这样 当前行所在所有能用的位置为:available = bound & ~(shu|pie|na)
 每次取最右的位置的1,递归进行下一行的搜索
-注意的是pie在row行影响的是第j列,在row+1行则影响j-1列,所以需要左移一位((pie|na)<<1),na同理
+注意的是pie在row行影响的是第j列,在row+1行则影响j-1列,所以需要左移一位((pie|p)<<1),na同理
 """
 
 class Solution(object):

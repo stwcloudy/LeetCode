@@ -28,7 +28,7 @@ class Solution(object):
                 l += 1
             else:
                 if height[r] < maxright:
-                    res += (maxright - height[r])
+                    res += (maxright - height[r])   
                 else:
                     maxright = height[r]
                 r -= 1
