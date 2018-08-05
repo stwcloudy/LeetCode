@@ -50,10 +50,10 @@ class Solution(object):
         if len(prices) <= 1:
             return 0
         inf = 0x7fffffff
-        hold1,release1,hold2,release2=-inf,0,-inf,0
+        buy1,sell1,buy2,sell2=-inf,0,-inf,0
         for i in range(len(prices)):
-            hold1 = max(hold1,-prices[i])
-            release1 = max(release1,hold1+prices[i])
-            hold2 = max(hold2,release1-prices[i])
-            release2 = max(release2,hold2+prices[i])
+            buy1 = max(buy1,-prices[i])
+            sell1 = max(sell1,buy1+prices[i])
+            buy2 = max(buy2,sell1-prices[i])
+            sell2 = max(sell2,buy2+prices[i])
         return sell2
